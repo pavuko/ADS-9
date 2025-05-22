@@ -38,7 +38,7 @@ int main() {
     std::vector<char> alphabet;
     for (int i = 0; i < n; ++i) alphabet.push_back('a' + i);
 
-    PMTree tree(alphabet);  
+    PMTree tree(alphabet);
     int total = factorial(n);
     int num = std::rand() % total + 1;
 
@@ -58,7 +58,7 @@ int main() {
             .count() /
         1e6;
     auto t3_start = std::chrono::high_resolution_clock::now();
-    getPerm2(tree, num);  
+    getPerm2(tree, num);
     auto t3_end = std::chrono::high_resolution_clock::now();
     double time3 =
         std::chrono::duration_cast<std::chrono::nanoseconds>(t3_end - t3_start)
