@@ -20,7 +20,6 @@ int factorial(int n) {
 
 int main() {
   std::srand(std::time(0));
-
   // Пример с алфавитом из 3 символов
   std::vector<char> sample = {'1', '2', '3'};
   PMTree tree(sample);
@@ -33,8 +32,7 @@ int main() {
   printVector(getPerm1(tree, 4));
 
   std::cout << "Example for getPerm2 (num 4): ";
-  printVector(getPerm2(tree, 4));  
-
+  printVector(getPerm2(tree, 4));
   // Замер времени
   for (int n = 1; n <= 10; ++n) {
     std::vector<char> alphabet;
@@ -59,7 +57,6 @@ int main() {
         std::chrono::duration_cast<std::chrono::nanoseconds>(t2_end - t2_start)
             .count() /
         1e6;
-
     auto t3_start = std::chrono::high_resolution_clock::now();
     getPerm2(tree, num);  
     auto t3_end = std::chrono::high_resolution_clock::now();
@@ -67,11 +64,9 @@ int main() {
         std::chrono::duration_cast<std::chrono::nanoseconds>(t3_end - t3_start)
             .count() /
         1e6;
-
     std::cout << "n = " << n << " | getAllPerms = " << time1 << " ms"
               << " | getPerm1 = " << time2 << " ms"
               << " | getPerm2 = " << time3 << " ms\n";
   }
-
   return 0;
 }
